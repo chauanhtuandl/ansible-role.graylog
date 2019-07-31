@@ -36,7 +36,7 @@
   uri:
     url: "{{ graylog_http_publish_uri }}"
     status_code: 200
-    validate_certs: False
+    validate_certs: false
   register: result
   until: result.status == 200
   retries: 60

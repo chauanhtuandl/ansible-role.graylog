@@ -10,7 +10,7 @@
       apt_repository:
         repo: "{{ graylog_mongodb_ubuntu_repo }}"
         state: "present"
-        update_cache: True
+        update_cache: true
   when:
     - ansible_distribution == 'Ubuntu'
 
@@ -24,7 +24,7 @@
       apt_repository:
         repo: "{{ graylog_mongodb_debian_repo }}"
         state: "present"
-        update_cache: True
+        update_cache: true
   when:
     - ansible_distribution == 'Debian'
 
