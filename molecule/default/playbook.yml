@@ -28,6 +28,9 @@
       changed_when: false
 
   roles:
+    - role: chauanhtuandl.repo_epel
+      when: ansible_os_family == 'RedHat'
+    - role: chauanhtuandl.pip
     - role: ansible-elasticsearch
     - role: ansible-role-nginx
     - role: graylog-ansible-role
