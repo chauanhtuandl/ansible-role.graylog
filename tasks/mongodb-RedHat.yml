@@ -57,7 +57,7 @@
     proto: "tcp"
     setype: "mongod_port_t"
     state: "present"
-  changed_when: false
+  when: ansible_selinux.status == "enabled"
 
 - meta: "flush_handlers"
 
