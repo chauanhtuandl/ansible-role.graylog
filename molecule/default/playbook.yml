@@ -28,4 +28,5 @@
       changed_when: false
 
   roles:
+    - role: elastic.elasticsearch
     - role: graylog-ansible-role
