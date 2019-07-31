@@ -22,7 +22,7 @@
 - name: "APT cache should be updated"
   apt:
     update_cache: true
-  when: install_repo.changed
+  # when: install_repo.changed
 
 - name: "Graylog server package should be installed"
   apt:
