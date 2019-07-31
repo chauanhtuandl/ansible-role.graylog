@@ -57,6 +57,7 @@
     proto: "tcp"
     setype: "mongod_port_t"
     state: "present"
+  changed_when: false
 
 - meta: "flush_handlers"
 

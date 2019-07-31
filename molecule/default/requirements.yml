@@ -1,5 +1,6 @@
 ---
 - src: chauanhtuandl.repo_epel
 - src: chauanhtuandl.pip
+- src: geerlingguy.java
 - src: https://github.com/elastic/ansible-elasticsearch.git
 - src: https://github.com/jdauphant/ansible-role-nginx.git

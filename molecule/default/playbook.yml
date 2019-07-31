@@ -31,6 +31,7 @@
     - role: chauanhtuandl.repo_epel
       when: ansible_os_family == 'RedHat'
     - role: chauanhtuandl.pip
+    - role: geerlingguy.java
     - role: ansible-elasticsearch
     - role: ansible-role-nginx
     - role: graylog-ansible-role
