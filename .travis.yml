@@ -1,34 +1,29 @@
 ---
-
-branches:
-  only:
-    - "master"
-
-services:
-  - "docker"
+language: python
+services: docker
 
 env:
-  - distro: "centos7_22"
-    init: "/usr/sbin/init"
-    run_opts: "--privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: "jessie_22"
-    init: "/sbin/init"
-    run_opts: "--privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: "xenial_22"
-    init: "/lib/systemd/systemd"
-    run_opts: "--privileged --security-opt seccomp=unconfined -v /sys/fs/cgroup:/sys/fs/cgroup:ro"
+  global:
+    - ROLE_NAME: zabbix-agent
+  matrix:
+    - MOLECULE_DISTRO: centos7
+    - MOLECULE_DISTRO: ubuntu1804
+    - MOLECULE_DISTRO: ubuntu1604
+    - MOLECULE_DISTRO: debian9
+
+install:
+  # Install test dependencies.
+  - pip install molecule docker
 
 before_script:
-  - >
-    docker build -t graylog-ansible-role-${distro}
-    -f tests/support/${distro}.Dockerfile tests/support
+  # Use actual Ansible Galaxy role name for the project directory.
+  - cd ../
+  - mv ansible-role.$ROLE_NAME chauanhtuandl.$ROLE_NAME
+  - cd chauanhtuandl.$ROLE_NAME
 
 script:
-  - >
-    docker run -d -it -v $PWD:/role:ro
-    ${run_opts} --name ${distro}
-    graylog-ansible-role-${distro} ${init}
-  - DOCKER_CONTAINER_ID=$(docker ps --filter name=${distro} -q)
-  - >
-    docker exec -it $DOCKER_CONTAINER_ID
-    /bin/bash -xec "bash -x run-tests.sh"
+  # Run tests.
+  - molecule test
+
+# notifications:
+#   webhooks: https://galaxy.ansible.com/api/v1/notifications/
