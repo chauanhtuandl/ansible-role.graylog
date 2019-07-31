@@ -16,12 +16,12 @@
   with_items: "{{ graylog_mongodb_package_dependencies | default([]) }}"
 
 - name: "Install policycoreutils-python"
-  package:
+  yum:
     name: policycoreutils-python
     state: installed
-  register: zabbix_agent_policycoreutils_installed
-  until: zabbix_agent_package_installed is succeeded
-  become: true
+  # register: zabbix_agent_policycoreutils_installed
+  # until: zabbix_agent_package_installed is succeeded
+  # become: true
 
 - name: "MongoDB should be installed"
   yum:

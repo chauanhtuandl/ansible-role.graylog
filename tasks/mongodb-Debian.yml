@@ -33,9 +33,9 @@
     pkg: policycoreutils-python-utils
     state: installed
     update_cache: true
-  register: zabbix_agent_policycoreutils_installed
-  until: zabbix_agent_package_installed is succeeded
-  become: true
+  # register: zabbix_agent_policycoreutils_installed
+  # until: zabbix_agent_package_installed is succeeded
+  # become: true
 
 - name: "MongoDB should be installed"
   apt:
