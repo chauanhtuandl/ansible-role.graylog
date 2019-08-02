@@ -2,7 +2,6 @@
 # Variable setup.
 - name: Include version-specific variables for OS.
   include_vars: "{{ ansible_os_family }}.yml"
-  when: ansible_os_family == 'RedHat'
 
 # Setup/install tasks.
 - include_tasks: setup-RedHat.yml
