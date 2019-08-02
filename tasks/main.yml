@@ -18,11 +18,11 @@
     state: "{{ service_service_state }}"
     enabled: "{{ service_service_enabled }}"
 
-- name: Make sure Elasticsearch is running before proceeding.
-  wait_for:
-    port: "{{ graylog_http_bind_address.split(':')[1] }}"
-    delay: 3
-    timeout: 300
+# - name: Make sure {{ service_name }} is running before proceeding.
+#   wait_for:
+#     port: "{{ graylog_http_bind_address.split(':')[1] }}"
+#     delay: 10
+#     timeout: 300
 
 - name: "Wait for Graylog server to startup"
   uri:
