@@ -16,21 +16,3 @@
     group: "graylog"
     mode: 0644
   notify: "restart graylog-server"
-
-- name: "Graylog server should start after reboot"
-  file:
-    path: "/etc/init/graylog-server.override"
-    state: "absent"
-
-- meta: "flush_handlers"
-
-- name: "Wait for Graylog server to startup"
-  uri:
-    url: "{{ graylog_http_publish_uri }}"
-    status_code: 200
-    validate_certs: false
-  register: result
-  until: result.status == 200
-  retries: 60
-  delay: 5
-  when: graylog_not_testing
