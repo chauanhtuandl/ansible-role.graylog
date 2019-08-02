@@ -31,3 +31,4 @@
 
 - name: return motd to registered var
   command: cat /var/log/graylog-server/server.log
+  changed_when: false
