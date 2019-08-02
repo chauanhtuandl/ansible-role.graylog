@@ -107,6 +107,11 @@ graylog_elasticsearch_socket_timeout: "60s"
 graylog_elasticsearch_index_optimization_timeout: "1h"
 graylog_elasticsearch_connect_timeout: "10s"
 
+# MongoDB
+graylog_mongodb_uri: "mongodb://localhost/graylog"
+graylog_mongodb_max_connections: 1000
+graylog_mongodb_threads_allowed_to_block_multiplier: 5
+
 # Content packs
 graylog_content_packs_loader_enabled: true
 graylog_content_packs_dir: "/usr/share/graylog-server/contentpacks"
@@ -161,9 +166,10 @@ graylog_web_thread_pool_size: 16
 # JVM
 graylog_gc_warning_threshold: "1s"
 graylog_server_java_opts: >-
-  '-Djava.net.preferIPv4Stack=true -Xms1500m -Xmx1500m -XX:NewRatio=1 -server -XX:+ResizeTLAB
-  -XX:+UseConcMarkSweepGC -XX:+CMSConcurrentMTEnabled -XX:+CMSClassUnloadingEnabled
-  -XX:+UseParNewGC -XX:-OmitStackTraceInFastThrow'
+  '-Xms1g -Xmx1g -XX:NewRatio=1 -server -XX:+ResizeTLAB
+   -XX:+UseConcMarkSweepGC -XX:+CMSConcurrentMTEnabled
+   -XX:+CMSClassUnloadingEnabled -XX:+UseParNewGC
+   -XX:-OmitStackTraceInFastThrow'
 graylog_server_args: ""
 graylog_server_wrapper: ""
 
