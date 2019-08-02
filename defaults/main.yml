@@ -1,5 +1,4 @@
 ---
----
 packages_name: graylog-server
 service_name: graylog-server
 service_service_state: started
