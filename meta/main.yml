@@ -1,10 +1,10 @@
 ---
 dependencies:
-  - src: chauanhtuandl.repo_epel
-  - src: chauanhtuandl.pip
-  - src: chauanhtuandl.java
-  - src: chauanhtuandl.mongodb
-  - src: chauanhtuandl.elasticsearch
+  - chauanhtuandl.repo_epel
+  - chauanhtuandl.pip
+  - chauanhtuandl.java
+  - chauanhtuandl.mongodb
+  - chauanhtuandl.elasticsearch
 
 # dependencies:
 #   - role: "elastic.elasticsearch"
