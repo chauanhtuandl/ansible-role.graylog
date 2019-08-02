@@ -166,10 +166,10 @@ graylog_web_thread_pool_size: 16
 # JVM
 graylog_gc_warning_threshold: "1s"
 graylog_server_java_opts: >-
-  '-Xms1g -Xmx1g -XX:NewRatio=1 -server -XX:+ResizeTLAB
-   -XX:+UseConcMarkSweepGC -XX:+CMSConcurrentMTEnabled
-   -XX:+CMSClassUnloadingEnabled -XX:+UseParNewGC
-   -XX:-OmitStackTraceInFastThrow'
+  -Xms1g -Xmx1g -XX:NewRatio=1 -server -XX:+ResizeTLAB
+  -XX:+UseConcMarkSweepGC -XX:+CMSConcurrentMTEnabled
+  -XX:+CMSClassUnloadingEnabled -XX:+UseParNewGC
+  -XX:-OmitStackTraceInFastThrow
 graylog_server_args: ""
 graylog_server_wrapper: ""
 
