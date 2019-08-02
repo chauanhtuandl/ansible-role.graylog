@@ -3,7 +3,7 @@
   template:
     src: "graylog.server.conf.j2"
     dest: "/etc/graylog/server/server.conf"
-    owner: "graylog"
+    owner: "root"
     group: "graylog"
     mode: 0644
 
@@ -11,6 +11,6 @@
   template:
     src: "graylog.server.default.j2"
     dest: "{{ graylog_server_defaults_file_path }}"
-    owner: "graylog"
+    owner: "root"
     group: "graylog"
     mode: 0644

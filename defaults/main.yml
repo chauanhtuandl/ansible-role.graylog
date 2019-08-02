@@ -1,7 +1,7 @@
 ---
 packages_name: graylog-server
 service_name: graylog-server
-service_service_state: started
+service_service_state: restarted
 service_service_enabled: true
 
 # General
