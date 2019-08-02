@@ -28,10 +28,10 @@
       changed_when: false
 
   roles:
-    - role: chauanhtuandl.repo_epel
+    - role: ansible-role.repo-epel
       when: ansible_os_family == 'RedHat'
-    - role: chauanhtuandl.pip
-    - role: geerlingguy.java
+    - role: ansible-role.pip
+    - role: ansible-role-java
     - role: ansible-elasticsearch
     - role: ansible-role-nginx
     - role: graylog-ansible-role

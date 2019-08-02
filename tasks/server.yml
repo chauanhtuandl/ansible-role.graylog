@@ -1,12 +1,4 @@
 ---
-
-- name: "Directory should be created with correct ownership and privileges"
-  file:
-    path: "/etc/graylog/server"
-    owner: "graylog"
-    group: "graylog"
-    mode: 0750
-
 - name: "Graylog server should be configured"
   template:
     src: "graylog.server.conf.j2"

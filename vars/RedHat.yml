@@ -1,7 +1,16 @@
 ---
+yum_packages_name:
+  - https://packages.graylog2.org/repo/packages/graylog-3.0-repository_latest.rpm
+
+yum_repository: []
+# - name: MongoDB
+#   baseurl: http://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.0/x86_64/
+#   repo_gpgcheck: false
+#   enabled: true
+#   gpgcheck: true
+#   gpgkey: https://www.mongodb.org/static/pgp/server-4.0.asc
+#   sslverify: false
+#   sslcacert:
 
 graylog_server_defaults_file_path: "/etc/sysconfig/graylog-server"
-graylog_mongodb_data_path: "/var/lib/mongo"
-graylog_mongodb_package_dependencies:
-  - "libselinux-python"
-graylog_java: "java-1.8.0-openjdk-headless.x86_64"
+

@@ -1,4 +1,8 @@
 ---
+apt_packages_name:
+  - python-apt
+  - apt-transport-https
+apt_repository: 'http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.0 main'
+apt_gpg_key: 'https://www.mongodb.org/static/pgp/server-4.0.asc'
+
 graylog_server_defaults_file_path: "/etc/default/graylog-server"
-graylog_mongodb_data_path: "/var/lib/mongodb"
-graylog_java: "openjdk-8-jre-headless"

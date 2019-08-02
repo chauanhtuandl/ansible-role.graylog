@@ -1,25 +1,18 @@
 ---
-
-- name: "Check for supported distribution"
-  fail:
-    msg: "Distro {{ ansible_distribution }} is not supported yet."
-  when: ansible_os_family not in graylog_supported_os_families
-
-- name: "Load OS-family specific vars"
+# Variable setup.
+- name: Include version-specific variables for OS.
   include_vars: "{{ ansible_os_family }}.yml"
+  when: ansible_os_family == 'RedHat'
 
-- name: "Discover systemd capabilities"
-  set_fact:
-    use_system_d: >
-      {{
-        (ansible_distribution == 'Debian' and ansible_distribution_version | version_compare('8', '>=')) or
-        (ansible_distribution in ['RedHat','CentOS'] and ansible_distribution_version | version_compare('7', '>=')) or
-        (ansible_distribution == 'Ubuntu' and ansible_distribution_version | version_compare('15', '>='))
-      }}
+# Setup/install tasks.
+- include_tasks: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
 
-- include: "mongodb-{{ ansible_os_family }}.yml"
-  when: graylog_install_mongodb
+- include_tasks: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
 
-- include: "setup-{{ ansible_os_family }}.yml"
-
-- include: "server.yml"
+- name: Ensure {{ service_name }} service is running as configured.
+  service:
+    name: "{{ service_name }}"
+    state: "{{ service_service_state }}"
+    enabled: "{{ service_service_enabled }}"
