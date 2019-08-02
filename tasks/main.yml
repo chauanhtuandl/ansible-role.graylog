@@ -17,6 +17,7 @@
     name: "{{ service_name }}"
     state: "{{ service_service_state }}"
     enabled: "{{ service_service_enabled }}"
+  changed_when: false
 
 # - name: Make sure {{ service_name }} is running before proceeding.
 #   wait_for:
