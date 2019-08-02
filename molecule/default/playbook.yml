@@ -30,7 +30,7 @@
   roles:
     - role: chauanhtuandl.repo_epel
       when: ansible_os_family == 'RedHat'
-    - src: chauanhtuandl.pip
-    - src: chauanhtuandl.java
-    - src: chauanhtuandl.mongodb
-    - src: chauanhtuandl.elasticsearch
+    - role: chauanhtuandl.pip
+    - role: chauanhtuandl.java
+    - role: chauanhtuandl.mongodb
+    - role: chauanhtuandl.elasticsearch
