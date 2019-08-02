@@ -34,4 +34,4 @@
     - role: chauanhtuandl.java
     - role: chauanhtuandl.mongodb
     - role: chauanhtuandl.elasticsearch
-    - role: ansible-role.graylog
+    - role: chauanhtuandl.graylog
