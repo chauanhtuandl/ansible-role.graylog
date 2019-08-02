@@ -30,5 +30,5 @@
 #   when: graylog_not_testing
 
 - name: return motd to registered var
-  command: cat /var/log/graylog-server/server.log
+  command: ls /var/log/graylog-server/
   changed_when: false
