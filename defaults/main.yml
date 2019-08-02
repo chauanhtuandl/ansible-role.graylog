@@ -7,9 +7,9 @@ service_service_enabled: true
 # General
 graylog_is_master: true
 graylog_node_id_file: "/etc/graylog/server/node-id"
-graylog_password_secret: "2jueVqZpwLLjaWxV"
+graylog_password_secret: "O7ZjjE*N1ct&S2&#7UcO"
 graylog_root_username: "admin"
-graylog_root_password_sha2: "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+graylog_root_password_sha2: "88d108e9d76dd9972fb75fae418e86dd7d4eb74748f27c2276b590fda6a02464"
 graylog_bin_dir: "/usr/share/graylog-server/bin"
 graylog_data_dir: "/var/lib/graylog-server"
 graylog_plugin_dir: "/usr/share/graylog-server/plugin"
