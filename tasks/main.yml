@@ -20,7 +20,7 @@
 
 - name: Make sure Elasticsearch is running before proceeding.
   wait_for:
-    port: "{{ graylog_http_publish_uri.split(':')[2] }}"
+    port: "{{ graylog_http_bind_address.split(':')[2] }}"
     delay: 3
     timeout: 300
 
