@@ -30,8 +30,8 @@
   roles:
     - role: ansible-role.repo-epel
       when: ansible_os_family == 'RedHat'
-    - role: ansible-role.pip
-    - role: ansible-role-java
-    - role: ansible-elasticsearch
-    - role: ansible-role-nginx
-    - role: graylog-ansible-role
+    - src: chauanhtuandl.repo_epel
+    - src: chauanhtuandl.pip
+    - src: chauanhtuandl.java
+    - src: chauanhtuandl.mongodb
+    - src: chauanhtuandl.elasticsearch
