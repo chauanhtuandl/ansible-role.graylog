@@ -6,7 +6,7 @@
     owner: "graylog"
     group: "graylog"
     mode: 0644
-  notify: "restart graylog-server"
+  notify: restart {{ service_name }}
 
 - name: "Graylog server defaults should be configured"
   template:
@@ -15,4 +15,4 @@
     owner: "graylog"
     group: "graylog"
     mode: 0644
-  notify: "restart graylog-server"
+  notify: restart {{ service_name }}
