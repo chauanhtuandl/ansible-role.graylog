@@ -18,6 +18,12 @@
     state: "{{ service_service_state }}"
     enabled: "{{ service_service_enabled }}"
 
+- name: Make sure Elasticsearch is running before proceeding.
+  wait_for:
+    port: "{{ graylog_http_publish_uri.split(':')[1] }}"
+    delay: 3
+    timeout: 300
+
 - name: "Wait for Graylog server to startup"
   uri:
     url: "{{ graylog_http_publish_uri }}"
@@ -25,7 +31,7 @@
     validate_certs: false
   register: result
   until: result.status == 200
-  retries: 60
+  retries: 300
   delay: 5
   when: graylog_not_testing
 
