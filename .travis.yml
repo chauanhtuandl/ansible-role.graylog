@@ -4,7 +4,7 @@ services: docker
 
 env:
   global:
-    - ROLE_NAME: zabbix-agent
+    - ROLE_NAME: graylog
   matrix:
     - MOLECULE_DISTRO: centos7
     - MOLECULE_DISTRO: ubuntu1804
@@ -18,8 +18,8 @@ install:
 before_script:
   # Use actual Ansible Galaxy role name for the project directory.
   - cd ../
-  # - mv ansible-role.$ROLE_NAME chauanhtuandl.$ROLE_NAME
-  - cd graylog-ansible-role
+  - mv ansible-role.$ROLE_NAME chauanhtuandl.$ROLE_NAME
+  - cd chauanhtuandl.$ROLE_NAME
 
 script:
   # Run tests.
