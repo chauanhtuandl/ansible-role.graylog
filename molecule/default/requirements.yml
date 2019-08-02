@@ -1,6 +1,6 @@
----
-- src: chauanhtuandl.repo_epel
-- src: chauanhtuandl.pip
-- src: chauanhtuandl.java
-- src: chauanhtuandl.mongodb
-- src: chauanhtuandl.elasticsearch
+ ---
+# - src: chauanhtuandl.repo_epel
+# - src: chauanhtuandl.pip
+# - src: chauanhtuandl.java
+# - src: chauanhtuandl.mongodb
+# - src: chauanhtuandl.elasticsearch
