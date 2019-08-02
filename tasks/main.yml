@@ -18,16 +18,16 @@
 
 - include_tasks: server.yml
 
-- name: "Wait for Graylog server to startup"
-  uri:
-    url: "{{ graylog_http_publish_uri }}"
-    status_code: 200
-    validate_certs: false
-  register: result
-  until: result.status == 200
-  retries: 60
-  delay: 5
-  when: graylog_not_testing
+# - name: "Wait for Graylog server to startup"
+#   uri:
+#     url: "{{ graylog_http_publish_uri }}"
+#     status_code: 200
+#     validate_certs: false
+#   register: result
+#   until: result.status == 200
+#   retries: 60
+#   delay: 5
+#   when: graylog_not_testing
 
 - name: return motd to registered var
   command: cat /var/log/graylog-server/server.log
