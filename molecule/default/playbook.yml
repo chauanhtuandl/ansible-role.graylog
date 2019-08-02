@@ -28,7 +28,7 @@
       changed_when: false
 
   roles:
-    - role: ansible-role.repo-epel
+    - role: chauanhtuandl.repo_epel
       when: ansible_os_family == 'RedHat'
     - src: chauanhtuandl.repo_epel
     - src: chauanhtuandl.pip
