@@ -1,7 +1,7 @@
 ---
-  - src: chauanhtuandl.java
-    version: master
-  - src: chauanhtuandl.mongodb
-    version: master
-  - src: chauanhtuandl.elasticsearch
-    version: master
+- src: chauanhtuandl.java
+  version: master
+- src: chauanhtuandl.mongodb
+  version: master
+- src: chauanhtuandl.elasticsearch
+  version: master
