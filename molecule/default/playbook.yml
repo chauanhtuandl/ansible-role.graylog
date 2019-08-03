@@ -8,7 +8,4 @@
     - elasticsearch_action_auto_create_index: false
 
   roles:
-    - role: chauanhtuandl.java
-    - role: chauanhtuandl.mongodb
-    - role: chauanhtuandl.elasticsearch
     - role: chauanhtuandl.graylog
