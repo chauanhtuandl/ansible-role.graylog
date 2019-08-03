@@ -14,9 +14,10 @@ dependencies:
 #     when: graylog_install_nginx
 
 galaxy_info:
-  author: "Marius Sturm"
-  company: "Graylog, Inc."
+  role_name: graylog
+  author: none
   description: "Install and configure Graylog log management."
+  company: "none"
   min_ansible_version: "2.2"
   license: "Apache 2"
   platforms:
