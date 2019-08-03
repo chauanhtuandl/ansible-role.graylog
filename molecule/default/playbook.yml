@@ -8,9 +8,6 @@
     - elasticsearch_action_auto_create_index: false
 
   roles:
-    - role: chauanhtuandl.repo_epel
-      when: ansible_os_family == 'RedHat'
-    - role: chauanhtuandl.pip
     - role: chauanhtuandl.java
     - role: chauanhtuandl.mongodb
     - role: chauanhtuandl.elasticsearch
