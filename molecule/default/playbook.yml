@@ -6,6 +6,10 @@
   vars:
     - elasticsearch_cluster_name: 'graylog'
     - elasticsearch_action_auto_create_index: false
+    # password_secret
+    - graylog_password_secret: "O7ZjjE*N1ct&S2&#7UcO"
+    # root_password_sha2: echo -n "Enter Password: " && head -1 </dev/stdin | tr -d '\n' | sha256sum | cut -d" " -f1
+    - graylog_root_password_sha2: "88d108e9d76dd9972fb75fae418e86dd7d4eb74748f27c2276b590fda6a02464"
 
   roles:
     - role: chauanhtuandl.graylog
